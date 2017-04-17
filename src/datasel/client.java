@@ -84,9 +84,11 @@ public class client {
     public static void main(String[] args) {
         //String op = args[0];
         Menu menu = buildMenu();
-        String menuContent = menuToStr(menu);
-        String menuJson = menuToJsonStr(menu);
-        int k = 0;
+        String menuContent = Utils.toStr(menu);
+        String url = "http://localhost/smartres.php";
+        String dataStr = "menu=" + menuContent;
+        String ret = Utils.httpPost(url, dataStr);
+        System.out.println(ret);
     }
 
 }
