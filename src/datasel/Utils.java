@@ -94,7 +94,7 @@ public class Utils {
 
         //2. send request out
         DataOutputStream oos = new DataOutputStream(con.getOutputStream());
-        oos.writeChars(datastr);
+        oos.writeBytes(datastr);
         oos.close();
 
         //3. collect the https response
